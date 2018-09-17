@@ -201,9 +201,9 @@ KEYMAPS(
 
 
   [FUNCTION] =  KEYMAP_STACKED
-  (Key_Backslash,   TOPSY(1),         TOPSY(2),        TOPSY(3),      TOPSY(4),         TOPSY(5),   Key_LBracket,
-   Key_Pipe,        Key_F1,           Key_F2,          Key_F3,        Key_F4,           Key_F5,     Key_LEDEffectNext,
-   ___,             LCTRL(Key_Left),  LCTRL(Key_Down), LCTRL(Key_Up), LCTRL(Key_Right), Key_F11,
+  (___,             TOPSY(1),         TOPSY(2),        TOPSY(3),      TOPSY(4),         TOPSY(5),   Key_LBracket,
+   Key_Backslash,   Key_F1,           Key_F2,          Key_F3,        Key_F4,           Key_F5,     Key_LEDEffectNext,
+   Key_Pipe,        LCTRL(Key_Left),  LCTRL(Key_Down), LCTRL(Key_Up), LCTRL(Key_Right), Key_F11,
    TOPSY(Backtick), Key_PrintScreen,  Key_Insert,      ___,           ___,              Key_F12,    Key_PageDown,
 
    LCTRL(Key_Backspace), ___, ___, ___,
@@ -237,9 +237,9 @@ KEYMAPS(
 
 
   [ALTFUNCTION] =  KEYMAP_STACKED
-  (Key_Backslash,   TOPSY(1),         TOPSY(2),        TOPSY(3),      TOPSY(4),         TOPSY(5),   Key_LBracket,
-   Key_Pipe,        Key_F1,           Key_F2,          Key_F3,        Key_F4,           Key_F5,     Key_Home,
-   ___,             LCTRL(Key_Left),  LCTRL(Key_Down), LCTRL(Key_Up), LCTRL(Key_Right), Key_F11,
+  (___,             TOPSY(1),         TOPSY(2),        TOPSY(3),      TOPSY(4),         TOPSY(5),   Key_LBracket,
+   Key_Backslash,   Key_F1,           Key_F2,          Key_F3,        Key_F4,           Key_F5,     Key_Home,
+   Key_Pipe,        LCTRL(Key_Left),  LCTRL(Key_Down), LCTRL(Key_Up), LCTRL(Key_Right), Key_F11,
    TOPSY(Backtick), Key_PrintScreen,  Key_Insert,      ___,           ___,              Key_F12,    Key_End,
 
    Key_Delete, ___, ___, ___,
