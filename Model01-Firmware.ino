@@ -232,7 +232,7 @@ KEYMAPS(
                     Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
    Key_Down,        Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_Minus,
 
-   Key_RightControl, Key_RightShift, Key_LeftAlt, Key_Spacebar,
+   Key_RightControl, Key_RightShift, Key_Enter, Key_Spacebar,
    ShiftToLayer(ALTFUNCTION)),
 
 
@@ -248,9 +248,9 @@ KEYMAPS(
    Key_RBracket,  TOPSY(6), TOPSY(7),   TOPSY(8),     TOPSY(9),        TOPSY(0),         Key_F11,
    Key_PageUp,    Key_F6,   Key_F7,     Key_F8,       Key_F9,          Key_F10,          TOPSY(Equals),
                   Key_Left, Key_Down,   Key_Up,       Key_Right,       TOPSY(Semicolon), TOPSY(Quote),
-   Key_PageDown,  Key_Enter, ___,        TOPSY(Comma), TOPSY(Period),   TOPSY(Slash),     TOPSY(Minus),
+   Key_PageDown,  Key_Enter, ___,       TOPSY(Comma), TOPSY(Period),   TOPSY(Slash),     TOPSY(Minus),
 
-   ___, ___, ___, Key_Enter,
+   ___, ___, Key_LeftAlt, ___,
    ___),
 
 
