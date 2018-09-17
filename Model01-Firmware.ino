@@ -143,6 +143,8 @@ enum {
 enum {
     PRIMARY,
     FUNCTION,
+    ALTPRIMARY,
+    ALTFUNCTION,
     NUMPAD,
     NUMPADFUN
 }; // layers
@@ -216,8 +218,44 @@ KEYMAPS(
    ___),
 
 
+  [ALTPRIMARY] = KEYMAP_STACKED
+  (Key_CapsLock, Key_1, Key_2, Key_3, Key_4, Key_5, TOPSY(LBracket),
+   Key_Escape,   Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Left,
+   Key_Tab,      Key_A, Key_S, Key_D, Key_F, Key_G,
+   Key_Backtick, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Right,
+
+   Key_Backspace, Key_LeftGui, Key_LeftShift, Key_LeftControl,
+   ShiftToLayer(ALTFUNCTION),
+
+   TOPSY(RBracket), Key_6, Key_7, Key_8,     Key_9,      Key_0,         LockLayer(NUMPAD),
+   Key_Up,          Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_Equals,
+                    Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
+   Key_Down,        Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_Minus,
+
+   Key_RightControl, Key_RightShift, Key_LeftAlt, Key_Spacebar,
+   ShiftToLayer(ALTFUNCTION)),
+
+
+  [ALTFUNCTION] =  KEYMAP_STACKED
+  (Key_Backslash,   TOPSY(1),         TOPSY(2),        TOPSY(3),      TOPSY(4),         TOPSY(5),   Key_LBracket,
+   Key_Pipe,        Key_F1,           Key_F2,          Key_F3,        Key_F4,           Key_F5,     Key_Home,
+   ___,             LCTRL(Key_Left),  LCTRL(Key_Down), LCTRL(Key_Up), LCTRL(Key_Right), Key_F11,
+   TOPSY(Backtick), Key_PrintScreen,  Key_Insert,      ___,           ___,              Key_F12,    Key_End,
+
+   Key_Delete, ___, ___, ___,
+   ___,
+
+   Key_RBracket,  TOPSY(6), TOPSY(7),   TOPSY(8),     TOPSY(9),        TOPSY(0),         Key_F11,
+   Key_PageUp,    Key_F6,   Key_F7,     Key_F8,       Key_F9,          Key_F10,          TOPSY(Equals),
+                  Key_Left, Key_Down,   Key_Up,       Key_Right,       TOPSY(Semicolon), TOPSY(Quote),
+   Key_PageDown,  Key_Enter, ___,        TOPSY(Comma), TOPSY(Period),   TOPSY(Slash),     TOPSY(Minus),
+
+   ___, ___, ___, Key_Enter,
+   ___),
+
+
   [NUMPAD] =  KEYMAP_STACKED
-  (___, ___, ___, ___, ___, ___, ___,
+  (LockLayer(ALTPRIMARY), ___, ___, ___, ___, ___, ___,
    ___, ___, Key_mouseScrollUp, Key_mouseUp,   Key_mouseScrollDn, ___,               ___,
    ___, ___, Key_mouseL,        Key_mouseDn,   Key_mouseR,        Key_mouseScrollUp,
    ___, ___, Key_mouseBtnM,     Key_mouseBtnL, Key_mouseBtnR,     Key_mouseScrollDn, ___,
@@ -359,7 +397,9 @@ static void toggleKeyboardProtocol(uint8_t combo_index) {
  */
 USE_MAGIC_COMBOS({.action = toggleKeyboardProtocol,
                   // Left Fn + Esc + Shift
-                  .keys = { R3C6, R2C6, R3C7 }
+                  //.keys = { R3C6, R2C6, R3C7 }
+                  // Prog + Left Fn + Right Fn + Num
+                  { R0C0, R3C6, R3C9, R0C15 },
                  });
 
 // First, tell Kaleidoscope which plugins you want to use.
@@ -492,4 +532,9 @@ void setup() {
 
 void loop() {
   Kaleidoscope.loop();
+  if (Layer.isOn(ALTPRIMARY)) {
+    LEDControl.setCrgbAt(0, 0, CRGB(255, 0, 255));
+  } else {
+    LEDControl.refreshAt(0, 0);
+  }
 }
