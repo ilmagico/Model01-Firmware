@@ -204,7 +204,7 @@ KEYMAPS(
    ___,             LCTRL(Key_Left),  LCTRL(Key_Down), LCTRL(Key_Up), LCTRL(Key_Right), Key_F11,
    TOPSY(Backtick), Key_PrintScreen,  Key_Insert,      ___,           ___,              Key_F12,    Key_PageDown,
 
-   Key_Delete, ___, ___, ___,
+   LCTRL(Key_Backspace), ___, ___, ___,
    ___,
 
    Key_RBracket,  TOPSY(6), TOPSY(7),   TOPSY(8),     TOPSY(9),        TOPSY(0),         Key_F11,
